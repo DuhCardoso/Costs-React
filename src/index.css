@@ -9,4 +9,5 @@
 html, body, #root{
   background-color: #EFEFEF;
   height: 100%;
+  font-size: 1.6rem;
 }

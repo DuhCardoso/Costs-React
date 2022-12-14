@@ -1,0 +1,36 @@
+.footer{
+    background-color: #222;
+    color: #fff;
+    padding: .8rem;
+    text-align: center;
+}
+
+.socialList{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+.socialList li{
+    transition: color 0.3s;
+}
+.socialList li:hover{
+    color:#ffbb33;
+}
+
+.socialList svg{
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.copyRight{
+    margin-top: 1rem;
+    color:#ffbb33;
+    
+}
+
+.copyRight span{
+    font-size: .5rem;
+    font-weight: 500;
+}

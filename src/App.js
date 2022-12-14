@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 // Import of Pages Components
 import Home from './components/pages/Home'
@@ -7,15 +7,14 @@ import Contact from './components/pages/Contact'
 import NewProject from './components/pages/NewProject'
 
 // Import of Layout Components
+import Navbar from './components/layout/Navbar'
 import Container from './components/layout/Container'
+import Footer from './components/layout/Footer'
 
 export default function App() {
   return (
   <Router>
-    <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/contact'>Contato</Link></li>
-    </ul>
+    <Navbar />
 
     <Container customClass="min-height">
       <Routes>
@@ -29,7 +28,7 @@ export default function App() {
       </Routes>
     </Container>
 
-    <p>Footer</p>
+    <Footer />
   </Router> 
 );
 }

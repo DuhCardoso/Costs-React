@@ -3,11 +3,21 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+}
+
+:root{
   font-size: 62.5%;
 }
 
 html, body, #root{
   background-color: #EFEFEF;
   height: 100%;
-  font-size: 1.6rem;
+}
+
+
+h1{
+  font-size: 4rem;
+}
+p{
+  font-size: 1.8rem;
 }

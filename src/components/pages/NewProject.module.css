@@ -1,0 +1,14 @@
+.newProjectContainer{
+    width: 45rem;
+    margin: 0 auto;
+    padding: 4.4rem;
+}
+
+.newProjectContainer h1{
+    margin-bottom: 0.8rem;
+}
+
+.newProjectContainer p{
+    color: #7b7b7b
+}
+

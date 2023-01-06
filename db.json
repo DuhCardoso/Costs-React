@@ -10,6 +10,13 @@
       "cost": 0,
       "services": [],
       "id": 1
+    },
+    {
+      "name": "Test 3",
+      "budget": "12515",
+      "cost": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [

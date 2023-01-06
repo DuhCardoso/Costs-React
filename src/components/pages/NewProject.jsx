@@ -22,7 +22,7 @@ export default function NewProject(){
             .then((resp) => resp.json())
             .then((data) => {
                 // Redirect
-                history.push('/project', {message: 'Projeto criado com sucesso!'})
+                history('/projects', {state: {message: 'Projeto criado com sucesso!'}})
             })
             .catch(e => console.log(e))
     }

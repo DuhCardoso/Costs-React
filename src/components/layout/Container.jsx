@@ -1,10 +1,11 @@
 import styles from "./Container.module.css"
 
-export default function Container(props){
+export default function Container({children, customClass}){
     return <div className={`
             ${styles.container} 
-            ${styles[props.customClass]}
+            ${styles[customClass]}
             `}>
-                {props.children}
+                {children}
             </div>
 }
+

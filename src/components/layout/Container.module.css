@@ -1,6 +1,6 @@
 .container{
-    width: 120rem;
     width: 75%;
+    max-width: 120rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -15,10 +15,12 @@
 
 .start{
     justify-content: flex-start;
+    width: 100%;
 }
 
 .column{
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
 }
 

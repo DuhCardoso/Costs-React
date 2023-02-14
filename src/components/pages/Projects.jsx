@@ -1,20 +1,37 @@
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import styles from "./Projects.module.css"
+import styles from "./Projects.module.css";
 
-import LinkButton from "../layout/LinkButton"
+import LinkButton from "../layout/LinkButton";
 import Message from "../layout/Message";
-import Container from "../layout/Container"
-
+import Container from "../layout/Container";
+import ProjectCard from "../project/ProjectCard";
 
 
 export default function Projects(){
+    const [projects, setProjects] = useState([])
+
     const location = useLocation()
     let message = ""
 
     if(location.state){
         message = location.state.message
     }
+
+    useEffect(()=>{
+        fetch("http://localhost:5000/projects", {
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                setProjects(data)
+            })
+            .catch(e => console.log(e))
+    }, [])
 
     return(
         <div className={styles.projectContainer}>
@@ -27,9 +44,19 @@ export default function Projects(){
                 <Message msg={message} type='success' />
             )}
 
+
             <Container customClass="start">
-                <p>Projetos...</p>
-                <h2>asda</h2>
+                {projects.length > 0 &&
+                    projects.map((project)=> (
+                        <ProjectCard 
+                            id={project.id}
+                            name={project.name}
+                            budget={project.budget}
+                            category={project?.category?.name}
+                            key={project.id}
+                        />
+                    ))
+                }
             </Container>
         </div>
     )

@@ -6,11 +6,13 @@ import styles from "./Projects.module.css";
 import LinkButton from "../layout/LinkButton";
 import Message from "../layout/Message";
 import Container from "../layout/Container";
+import Loading from "../layout/Loading";
 import ProjectCard from "../project/ProjectCard";
 
 
 export default function Projects(){
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     const location = useLocation()
     let message = ""
@@ -20,17 +22,20 @@ export default function Projects(){
     }
 
     useEffect(()=>{
-        fetch("http://localhost:5000/projects", {
-            method: 'GET',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-        })
+        setTimeout(()=>{
+            fetch("http://localhost:5000/projects", {
+                method: 'GET',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+            })
             .then(resp => resp.json())
             .then(data => {
                 setProjects(data)
+                setRemoveLoading(true)
             })
             .catch(e => console.log(e))
+        }, 300)
     }, [])
 
     return(
@@ -57,6 +62,10 @@ export default function Projects(){
                         />
                     ))
                 }
+                {!removeLoading && <Loading/>}
+                {removeLoading && Projects.legth === 0 && (
+                    <p>Não há projetos</p>
+                )}
             </Container>
         </div>
     )

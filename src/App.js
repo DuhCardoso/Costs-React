@@ -6,6 +6,7 @@ import Company from './components/pages/Company'
 import Contact from './components/pages/Contact'
 import NewProject from './components/pages/NewProject'
 import Projects from './components/pages/Projects'
+import Project from './components/pages/Project'
 
 // Import of Layout Components
 import Navbar from './components/layout/Navbar'
@@ -28,6 +29,8 @@ export default function App() {
         <Route path='/newproject' element={<NewProject/>} />
 
         <Route path='/projects' element={<Projects/>} />
+
+        <Route path='/project/:id' element={<Project/>} />
       </Routes>
     </Container>
 
